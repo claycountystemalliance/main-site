@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clay County STEM Alliance - Building Tomorrow's Innovators</title>
+    <link rel="stylesheet" href="./style.css"></link>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <h1>Clay County STEM Alliance</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./story.html">Our Story</a></li>
+                <li><a href="#">Programs</a></li>
+                <li><a href="./volunteer.html">Get Involved</a></li>
+                <li><a href="./donate.html">Donate</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+<section id="programs" class="programs">
+        <div class="container">
+            <h3 class="section-title">STEM Opportunities We Provide</h3>
+            
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="icon">🤖</div>
+                    <h4>Competitive Robotics</h4>
+                    <p>FIRST Inspires FTC Challenge teams, FIRST LEGO League, VEX Robotics, and custom robotics projects. Students learn engineering, programming, and teamwork while competing at regional and state levels.</p>
+                </div>
+
+                <div class="program-card">
+                    <div class="icon">💻</div>
+                    <h4>Programming & Tech</h4>
+                    <p>Comprehensive coding education including Python, Java, web development, mobile apps, and emerging technologies like AI and machine learning. From beginners to advanced programmers.</p>
+                </div>
+
+                <div class="program-card">
+                    <div class="icon">🛠️</div>
+                    <h4>Maker Workshops</h4>
+                    <p>Hands-on engineering projects featuring 3D printing, electronics, woodworking, and fabrication. Students bring their ideas to life while learning practical skills.</p>
+                </div>
+
+                <div class="program-card">
+                    <div class="icon">🌱</div>
+                    <h4>Community Innovation</h4>
+                    <p>Real-world challenges addressing local needs including environmental solutions, accessibility improvements, and civic technology projects that make a difference.</p>
+                </div>
+
+                <div class="program-card">
+                    <div class="icon">🔬</div>
+                    <h4>STEM Clubs</h4>
+                    <p>Math clubs, Science Olympiad teams, engineering challenges, and interdisciplinary projects that connect multiple STEM fields for comprehensive learning.</p>
+                </div>
+
+                <div class="program-card">
+                    <div class="icon">🏆</div>
+                    <h4>Competition Support</h4>
+                    <p>Support for local, regional, and national STEM competitions including science fairs, math competitions, robotics tournaments, and innovation challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+	<footer>
+        <div class="container">
+            <p>&copy; 2025 Clay County STEM Alliance Inc. All rights reserved.</p>
+            <p style="margin-top: 1rem; font-style: italic;">"Building tomorrow's innovators today - one student at a time"</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for smooth scrolling enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handlers for navigation links
+            const navLinks = document.querySelectorAll('.nav-links a, .btn');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Add simple animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe program cards and other elements
+            const animatedElements = document.querySelectorAll('.program-card, .involvement-card, .donation-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

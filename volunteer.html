@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clay County STEM Alliance - Building Tomorrow's Innovators</title>
+    <link rel="stylesheet" href="./style.css"></link>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <h1>Clay County STEM Alliance</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./story.html">Our Story</a></li>
+                <li><a href="./programs.html">Programs</a></li>
+                <li><a href="#">Get Involved</a></li>
+                <li><a href="./donate.html">Donate</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<section id="volunteer" class="get-involved">
+        <div class="container">
+            <h3 class="section-title" style="color: white;">How You Can Make a Difference</h3>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">Whether you have 2 hours a month or professional expertise to share, there's a place for you in our mission!</p>
+            
+            <div class="involvement-grid">
+                <div class="involvement-card">
+                    <h4>🎯 Leadership Roles</h4>
+                    <ul>
+                        <li>Board of Directors</li>
+                        <li>Committee Chairs</li>
+                        <li>Program Coordinators</li>
+                        <li>Grant Writing Team</li>
+                    </ul>
+                </div>
+
+                <div class="involvement-card">
+                    <h4>👨‍🏫 Student Mentoring</h4>
+                    <ul>
+                        <li>Robotics Team Mentors</li>
+                        <li>Programming Instructors</li>
+                        <li>Technical Coaches</li>
+                        <li>Competition Support</li>
+                    </ul>
+                </div>
+
+                <div class="involvement-card">
+                    <h4>🛠️ Professional Services</h4>
+                    <ul>
+                        <li>Legal & Accounting</li>
+                        <li>Marketing & Design</li>
+                        <li>Event Planning</li>
+                        <li>Administrative Support</li>
+                    </ul>
+                </div>
+
+                <div class="involvement-card">
+                    <h4>🎪 Event Support</h4>
+                    <ul>
+                        <li>Fundraising Events</li>
+                        <li>Community Outreach</li>
+                        <li>Competition Transport</li>
+                        <li>Workshop Assistance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+	<footer>
+        <div class="container">
+            <p>&copy; 2025 Clay County STEM Alliance Inc. All rights reserved.</p>
+            <p style="margin-top: 1rem; font-style: italic;">"Building tomorrow's innovators today - one student at a time"</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for smooth scrolling enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handlers for navigation links
+            const navLinks = document.querySelectorAll('.nav-links a, .btn');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Add simple animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe program cards and other elements
+            const animatedElements = document.querySelectorAll('.program-card, .involvement-card, .donation-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

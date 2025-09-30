@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clay County STEM Alliance - Building Tomorrow's Innovators</title>
+    <link rel="stylesheet" href="./style.css"></link>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <h1>Clay County STEM Alliance</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./story.html">Our Story</a></li>
+                <li><a href="./programs.html">Programs</a></li>
+                <li><a href="./volunteer.html">Get Involved</a></li>
+                <li><a href="#">Donate</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+<section id="donate" class="donation">
+        <div class="container">
+            <h3 class="section-title">Support Our Mission</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Your donation directly supports student programs and removes financial barriers to STEM education.</p>
+            
+            <div class="donation-options">
+                <div class="donation-card">
+                    <h4>💳 Quick Donation via Zelle</h4>
+                    <p>Send secure, instant donations directly to our organization account.</p>
+                    <div class="zelle-info">
+                        <strong>Zelle Recipient:</strong><br>
+                        claycountystemalliance@gmail.com<br><br>
+                        <small>Include "STEM Alliance Donation" in memo</small>
+                    </div>
+                </div>
+
+                <div class="donation-card">
+                    <h4>🏢 Corporate Sponsorship</h4>
+                    <p>Partner with us for meaningful community impact and employee engagement opportunities.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Team Sponsorships ($2,500-$5,000)</li>
+                        <li>Program Sponsorships ($5,000-$15,000)</li>
+                        <li>Equipment & Material Donations</li>
+                        <li>Workplace Space & Facilities</li>
+                        <li>Complete Details: <a href="./CCSTEMA-sponsor-details.pdf">Click Here</a></li>
+                    </ul>
+                </div>
+
+                <div class="donation-card">
+                    <h4>📦 Equipment Donations</h4>
+                    <p>We accept donations of tools, computers, and materials that directly support student learning.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Laptops & Computers</li>
+                        <li>Robotics Kits & Parts</li>
+                        <li>3D Printers & Tools</li>
+                        <li>Workshop Tables & Storage</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 2rem; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                <h4 style="color: #2c3e50; margin-bottom: 1rem;">🏛️ Tax Information</h4>
+                <p><strong>Status:</strong> 501(c)(3) application pending with IRS</p>
+                <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">All donations are tax-deductible to the fullest extent allowed by law. You will receive a donation receipt for your records.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+	<footer>
+        <div class="container">
+            <p>&copy; 2025 Clay County STEM Alliance Inc. All rights reserved.</p>
+            <p style="margin-top: 1rem; font-style: italic;">"Building tomorrow's innovators today - one student at a time"</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for smooth scrolling enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handlers for navigation links
+            const navLinks = document.querySelectorAll('.nav-links a, .btn');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Add simple animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe program cards and other elements
+            const animatedElements = document.querySelectorAll('.program-card, .involvement-card, .donation-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

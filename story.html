@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clay County STEM Alliance - Building Tomorrow's Innovators</title>
+    <link rel="stylesheet" href="./style.css"></link>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <h1>Clay County STEM Alliance</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="./programs.html">Programs</a></li>
+                <li><a href="./volunteer.html">Get Involved</a></li>
+                <li><a href="./donate.html">Donate</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<section id="story" class="story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h3>Why We Exist</h3>
+                    <p>Recent budget constraints within the Clay County School District have put numerous robotics teams and STEM clubs at risk of discontinuation. These programs provide students with invaluable hands-on experience in science, technology, engineering, and mathematics – skills critical for tomorrow's workforce.</p>
+                    <p>We couldn't stand by and watch talented students lose access to programs that could shape their entire career trajectory. The Clay County STEM Alliance was formed to bridge this gap through community partnership and support.</p>
+                    <p>Our mission is simple but powerful: ensure that every student in Clay County has access to high-quality STEM education opportunities, regardless of their family's financial circumstances.</p>
+                </div>
+                <div class="highlight-box">
+                    <h4>🚨 URGENT: Students Need Your Help!</h4>
+                    <p>Multiple robotics teams are at risk of losing funding. With your support, we can ensure these critical programs continue and expand.</p>
+                    <p><strong>501(c)(3) Status Pending</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+	<footer>
+        <div class="container">
+            <p>&copy; 2025 Clay County STEM Alliance Inc. All rights reserved.</p>
+            <p style="margin-top: 1rem; font-style: italic;">"Building tomorrow's innovators today - one student at a time"</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for smooth scrolling enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handlers for navigation links
+            const navLinks = document.querySelectorAll('.nav-links a, .btn');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Add simple animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe program cards and other elements
+            const animatedElements = document.querySelectorAll('.program-card, .involvement-card, .donation-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

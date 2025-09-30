@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clay County STEM Alliance - Building Tomorrow's Innovators</title>
+    <link rel="stylesheet" href="./style.css"></link>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <h1>Clay County STEM Alliance</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="./story.html">Our Story</a></li>
+                <li><a href="./programs.html">Programs</a></li>
+                <li><a href="./volunteer.html">Get Involved</a></li>
+                <li><a href="./donate.html">Donate</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Building Tomorrow's Innovators Today</h2>
+            <p>Expanding access to high-quality STEM education opportunities for every student in Clay County, Florida</p>
+            <div class="cta-buttons">
+                <a href="./volunteer.html" class="btn btn-primary">Join Our Mission</a>
+                <a href="./programs.html" class="btn btn-secondary">Explore Programs</a>
+            </div>
+        </div>
+    </section>
+
+    
+
+    
+
+    
+
+    
+
+    <section class="social-section">
+        <div class="container">
+            <h3>Follow Us on Social Media</h3>
+            <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">Stay connected and see our students' amazing achievements!</p>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/people/Clay-County-STEM-Alliance/61580450850607/" target="_blank" class="social-link">
+                    <div class="social-icon facebook-icon">
+                        <span>f</span>
+                    </div>
+                    <span class="social-label">Facebook</span>
+                </a>
+
+                <a href="https://www.instagram.com/claycountystem" target="_blank" class="social-link">
+                    <div class="social-icon instagram-icon">
+                        <span>📷</span>
+                    </div>
+                    <span class="social-label">@claycountystem</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Clay County STEM Alliance Inc. All rights reserved.</p>
+            <p style="margin-top: 1rem; font-style: italic;">"Building tomorrow's innovators today - one student at a time"</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for smooth scrolling enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handlers for navigation links
+            const navLinks = document.querySelectorAll('.nav-links a, .btn');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Add simple animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe program cards and other elements
+            const animatedElements = document.querySelectorAll('.program-card, .involvement-card, .donation-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
