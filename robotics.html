@@ -4,8 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Competitive Robotics - Clay County STEM Alliance</title>
-    <link rel="stylesheet" href="./style.css"></link>
-    
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .program-hero {
+            background: linear-gradient(rgba(41, 128, 185, 0.9), rgba(52, 152, 219, 0.9));
+            color: white;
+            text-align: center;
+            padding: 4rem 0 3rem 0;
+        }
+
+        .program-hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-hero .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-content {
+            padding: 3rem 0;
+            background: white;
+        }
+
+        .program-section {
+            margin-bottom: 3rem;
+        }
+
+        .program-section h3 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .program-section h4 {
+            color: #2980b9;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .program-section ul {
+            color: #666;
+            line-height: 1.8;
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        .highlight-card h4 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            background: white;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .schedule-table th {
+            background: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .schedule-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-box h3 {
+            margin-bottom: 1rem;
+            color: white;
+            border: none;
+            padding: 0;
+        }
+
+        .cta-box p {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-box .btn {
+            background: white;
+            color: #e84393;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .cta-box .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .program-hero h2 {
+                font-size: 2rem;
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -15,7 +172,7 @@
             </div>
             <ul class="nav-links">
                 <li><a href="./index.html">Home</a></li>
-                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./story.html">Our Story</a></li>
                 <li><a href="./programs.html">Programs</a></li>
                 <li><a href="./volunteer.html">Get Involved</a></li>
                 <li><a href="./donate.html">Donate</a></li>
@@ -46,6 +203,11 @@
                 <h4>FIRST Tech Challenge (FTC) - Grades 7-12</h4>
                 <p><strong>Team Size:</strong> 6-15 students | <strong>Time:</strong> 8-12 hours/week | <strong>Season:</strong> October - March</p>
                 <p>Our flagship program where students design, build, and program sophisticated robots using metal components, motors, and sensors. Teams compete in regional and state championships with potential for national advancement.</p>
+                
+                <p><strong>Our FTC Teams:</strong></p>
+                <ul>
+                    <li><a href="https://32149.claycountystemalliance.org" target="_blank" rel="noopener noreferrer">Team 32149 - Robo Runnerz</a></li>
+                </ul>
 
                 <h4>FIRST Robotics Competition (FRC) - Grades 9-12</h4>
                 <p><strong>Team Size:</strong> 15-30 students | <strong>Time:</strong> 15-20 hours/week | <strong>Season:</strong> January - April</p>
