@@ -636,3 +636,116 @@ footer {
         padding: 0.75rem 0.5rem;
     }
 }
+/* === DONATION PAGE STYLES === */
+/* Add this section to your style.css file */
+
+.donation {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.donation .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.donation > .container > p {
+    text-align: center;
+    color: #666;
+}
+
+.donation-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.donation-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border-top: 4px solid #27ae60;
+}
+
+.donation-card:hover {
+    transform: translateY(-5px);
+}
+
+.donation-card h4 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.donation-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.donation-card ul {
+    list-style: none;
+    color: #666;
+    line-height: 1.8;
+    margin-left: 0;
+}
+
+.donation-card li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.donation-card li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.zelle-info {
+    background: #e8f5e9;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #27ae60;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.zelle-info strong {
+    color: #2c3e50;
+}
+
+.zelle-info small {
+    color: #666;
+    font-style: italic;
+}
+
+.tax-info {
+    background: #fff3cd;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #ffc107;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.tax-info p {
+    color: #856404;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+/* Responsive for donation page */
+@media (max-width: 768px) {
+    .donation-options {
+        grid-template-columns: 1fr;
+    }
+}
