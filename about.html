@@ -11,20 +11,28 @@
 </head>
 <body>
     <header>
-        <nav class="container">
-            <div class="logo">
-                <h1>Clay County STEM Alliance</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="./programs.html">Programs</a></li>
-                <li><a href="./volunteer.html">Get Involved</a></li>
-                <li><a href="./donate.html">Donate</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="container">
+        <div class="logo">
+            <h1>Clay County STEM Alliance</h1>
+        </div>
+        
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+            ☰
+        </button>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./programs.html">Programs</a></li>
+            <li><a href="./volunteer.html">Get Involved</a></li>
+            <li><a href="./donate.html">Donate</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- IMPORTANT: Add this AFTER the closing </header> tag -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
 <section class="story-detail">
     <div class="container">
